@@ -1,21 +1,21 @@
-package com.jean.remoteCamera.customUI;
+package com.jean.farCam.customUI;
 
 
 import android.content.Context;
 import android.preference.EditTextPreference;
 import android.util.AttributeSet;
 
-public class EditFloatPreference extends EditTextPreference
+public class EditIntPreference extends EditTextPreference
 {
-    public EditFloatPreference(Context context) {
+    public EditIntPreference(Context context) {
         super(context); 
     }       
 
-    public EditFloatPreference(Context context, AttributeSet attrs) {
+    public EditIntPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public EditFloatPreference(Context context, AttributeSet attrs, int defStyle) {
+    public EditIntPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
@@ -23,7 +23,7 @@ public class EditFloatPreference extends EditTextPreference
     public String getText() {
         try
         {
-        return String.valueOf(getSharedPreferences().getFloat(getKey(), 0));
+        return String.valueOf(getSharedPreferences().getInt(getKey(), 0));
         }
         catch(Exception ex)
         {
@@ -33,7 +33,7 @@ public class EditFloatPreference extends EditTextPreference
 
     @Override
     public void setText(String text) {
-        getSharedPreferences().edit().putFloat(getKey(), Float.parseFloat(text)).commit();
+        getSharedPreferences().edit().putInt(getKey(), Integer.parseInt(text)).commit();
     }
 
     @Override

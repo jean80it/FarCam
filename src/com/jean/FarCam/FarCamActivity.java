@@ -1,4 +1,4 @@
-package com.jean.remoteCamera;
+package com.jean.FarCam;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,8 +13,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceView;
+import com.jean.FarCam.R;
 
-public class RemoteCameraActivity extends Activity {
+public class FarCamActivity extends Activity {
 
     private static final String TAG = "remoteCamera";
 
@@ -53,7 +54,7 @@ public class RemoteCameraActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(RemoteCameraActivity.this);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(FarCamActivity.this);
         _forceNoPreview = settings.getBoolean(getString(R.string.settings_key_force_no_preview), false);
         _xResolution = settings.getInt(getString(R.string.settings_key_x_resolution), 640);
         _yResolution = settings.getInt(getString(R.string.settings_key_y_resolution), 480);

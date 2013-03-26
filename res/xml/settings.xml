@@ -12,7 +12,7 @@
             android:summary="@string/settings_summary_no_preview"
             android:defaultValue="false"/>
 
-        <com.jean.remoteCamera.customUI.EditIntPreference 
+        <com.jean.FarCam.customUI.EditIntPreference 
             android:key="@string/settings_key_x_resolution"
             android:title="@string/settings_title_x_resolution" 
             android:summary="@string/settings_summary_x_resolution"
@@ -20,7 +20,7 @@
             android:dialogMessage="@string/settings_dialog_message_x_resolution"    
             android:defaultValue="640" />
         
-        <com.jean.remoteCamera.customUI.EditIntPreference
+        <com.jean.FarCam.customUI.EditIntPreference
             android:key="@string/settings_key_y_resolution"
             android:title="@string/settings_title_y_resolution" 
             android:summary="@string/settings_summary_y_resolution"
@@ -28,7 +28,7 @@
             android:dialogMessage="@string/settings_dialog_message_y_resolution"    
             android:defaultValue="480" />
         
-        <com.jean.remoteCamera.customUI.EditIntPreference
+        <com.jean.FarCam.customUI.EditIntPreference
             android:key="@string/settings_key_port"
             android:title="@string/settings_title_port" 
             android:summary="@string/settings_summary_port"

@@ -1,4 +1,4 @@
-package com.jean.remoteCamera;
+package com.jean.FarCam;
 
 import android.util.Log;
 import java.io.BufferedReader;

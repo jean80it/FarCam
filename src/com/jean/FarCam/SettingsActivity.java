@@ -1,4 +1,4 @@
-package com.jean.remoteCamera;
+package com.jean.FarCam;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
-import com.jean.remoteCamera.customUI.EditIntPreference;
+import com.jean.farCam.customUI.EditIntPreference;
 
 public class SettingsActivity extends PreferenceActivity {
 

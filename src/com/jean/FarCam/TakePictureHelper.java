@@ -1,4 +1,4 @@
-package com.jean.remoteCamera;
+package com.jean.FarCam;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
