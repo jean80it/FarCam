@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_error_resolution">Please insert an integer number between 1 and 9999</string>
+    
+    <string name="settings_key_force_no_preview">settings_force_no_preview</string>
+    <string name="settings_title_no_preview">Preview</string>
+    <string name="settings_summary_no_preview">Force no preview</string>
+    
+    <string name="settings_key_x_resolution">settings_key_x_resolution</string>
+    <string name="settings_title_x_resolution">X Resolution</string>
+    <string name="settings_summary_x_resolution">picture x resolution</string>
+    <string name="settings_dialog_title_x_resolution">X Resolution</string>
+    <string name="settings_dialog_message_x_resolution">Insert an integer</string>
+    
+    <string name="settings_key_y_resolution">settings_key_y_resolution</string>
+    <string name="settings_title_y_resolution">Y Resolution</string>
+    <string name="settings_summary_y_resolution">picture y resolution</string>
+    <string name="settings_dialog_title_y_resolution">Y Resolution</string>
+    <string name="settings_dialog_message_y_resolution">Insert an integer</string>
+    
+    <string name="settings_key_port">settings_key_port</string>
+    <string name="settings_title_port">Port</string>
+    <string name="settings_summary_port">network port for incoming connections</string>
+    <string name="settings_dialog_title_port">Port</string>
+    <string name="settings_dialog_message_port">Insert an integer</string>
+    
+</resources>

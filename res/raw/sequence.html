@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>Refresh test</title>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script type="text/javascript" >
+        var frontBuf;
+        var backBuf;
+        function loadImage(e) {
+            var oldfrontBuf = frontBuf;
+            frontBuf = backBuf;
+            backBuf = oldfrontBuf;
+            frontBuf.unbind()
+            frontBuf.css("zIndex", 1);
+            loadFeed();
+        }
+        function loadFeed() {
+            backBuf.css("zIndex", -1);
+            backBuf.load(loadImage);
+            backBuf.attr("src", "shot.jpg");
+        }
+        $(document).ready(function() {
+            frontBuf = $("#img1");
+            backBuf = $("#img2");
+            loadFeed();
+        });
+    </script>
+</head><body><div>
+<img id="img1" src="" style="position:absolute; z-index: 1; " />
+<img id="img2" src="" style="position:absolute; z-index: -1; " />
+</div></body></html>
