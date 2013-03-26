@@ -24,4 +24,8 @@
     <string name="settings_dialog_title_port">Port</string>
     <string name="settings_dialog_message_port">Insert an integer</string>
     
+    <string name="settings_key_ip">settings_key_ip</string>
+    <string name="settings_title_ip">IP</string>
+    <string name="settings_description_ip">This is your IP</string>
+    
 </resources>

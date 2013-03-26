@@ -6,13 +6,26 @@
         android:title="Camera"
         android:key="cameraPrefCat">
         
+        <Preference 
+            android:title="@string/settings_title_ip" 
+            android:summary="@string/settings_description_ip"
+            android:key="@string/settings_key_ip" />
+        
+        <com.jean.farCam.customUI.EditIntPreference
+            android:key="@string/settings_key_port"
+            android:title="@string/settings_title_port" 
+            android:summary="@string/settings_summary_port"
+            android:dialogTitle="@string/settings_dialog_title_port"
+            android:dialogMessage="@string/settings_dialog_message_port"    
+            android:defaultValue="1234" />
+        
         <CheckBoxPreference
             android:key="@string/settings_key_force_no_preview"
             android:title="@string/settings_title_no_preview"
             android:summary="@string/settings_summary_no_preview"
             android:defaultValue="false"/>
 
-        <com.jean.FarCam.customUI.EditIntPreference 
+        <com.jean.farCam.customUI.EditIntPreference 
             android:key="@string/settings_key_x_resolution"
             android:title="@string/settings_title_x_resolution" 
             android:summary="@string/settings_summary_x_resolution"
@@ -20,21 +33,13 @@
             android:dialogMessage="@string/settings_dialog_message_x_resolution"    
             android:defaultValue="640" />
         
-        <com.jean.FarCam.customUI.EditIntPreference
+        <com.jean.farCam.customUI.EditIntPreference
             android:key="@string/settings_key_y_resolution"
             android:title="@string/settings_title_y_resolution" 
             android:summary="@string/settings_summary_y_resolution"
             android:dialogTitle="@string/settings_dialog_title_y_resolution"
             android:dialogMessage="@string/settings_dialog_message_y_resolution"    
             android:defaultValue="480" />
-        
-        <com.jean.FarCam.customUI.EditIntPreference
-            android:key="@string/settings_key_port"
-            android:title="@string/settings_title_port" 
-            android:summary="@string/settings_summary_port"
-            android:dialogTitle="@string/settings_dialog_title_port"
-            android:dialogMessage="@string/settings_dialog_message_port"    
-            android:defaultValue="1234" />
 
     </PreferenceCategory>
     
