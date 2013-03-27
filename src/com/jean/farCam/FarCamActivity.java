@@ -27,6 +27,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceView;
+import com.jean.farCam.TakePictureHelper;
 
 public class FarCamActivity extends Activity {
 

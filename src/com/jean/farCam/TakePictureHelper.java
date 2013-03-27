@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TakePictureHelper implements SurfaceHolder.Callback{
 
-    private static final String TAG = "FarCam";
+    private static final String TAG = "remoteCamera";
     
     private Camera _camera = null;
 
