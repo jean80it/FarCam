@@ -14,6 +14,7 @@
 
 package com.jean.farCam;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -21,6 +22,11 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 import com.jean.farCam.customUI.EditIntPreference;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Collections;
+import java.util.List;
+import org.apache.http.conn.util.InetAddressUtils;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -28,6 +34,8 @@ public class SettingsActivity extends PreferenceActivity {
     final int DEFAULT_Y_RESOLUTION = 480;
     final int DEFAULT_PORT = 1234;
     
+    Preference ipPref = null;
+            
     private Preference.OnPreferenceChangeListener onResolutionPreferenceChangedListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -90,11 +98,29 @@ public class SettingsActivity extends PreferenceActivity {
         eip.setSummary(setting+"");
         if (setListeners) eip.setOnPreferenceChangeListener(onResolutionPreferenceChangedListener);
         
+        if (setListeners)
+        { 
+            key = getString(R.string.settings_key_ip);
+            ipPref = (Preference) findPreference(key);
+            ipPref.setTitle("IP: "+getIPAddress());
+            ipPref.setOnPreferenceClickListener(onIpClickListener);
+        }
+        
         //...
         
         // Write default value to preference
         editor.commit();
     }
+    
+    private Preference.OnPreferenceClickListener onIpClickListener = new Preference.OnPreferenceClickListener() {
+
+                public boolean onPreferenceClick(Preference preference) {
+                    
+                    ipPref.setTitle("IP: "+getIPAddress());
+                    
+                    return true;
+                }
+            };
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,6 +138,22 @@ public class SettingsActivity extends PreferenceActivity {
         showPreference(false);
     }
     
-    
+    public static String getIPAddress() {
+        try {
+            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+            for (NetworkInterface intf : interfaces) {
+                List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
+                for (InetAddress addr : addrs) {
+                    if (!addr.isLoopbackAddress()) {
+                        String sAddr = addr.getHostAddress().toUpperCase();
+                           if (InetAddressUtils.isIPv4Address(sAddr)) {
+                                return sAddr;
+                           }
+                    }
+                }
+            }
+        } catch (Exception ex) { }
+        return "";
+    }
 }
 

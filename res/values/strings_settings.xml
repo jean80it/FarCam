@@ -26,6 +26,6 @@
     
     <string name="settings_key_ip">settings_key_ip</string>
     <string name="settings_title_ip">IP</string>
-    <string name="settings_description_ip">This is your IP</string>
+    <string name="settings_description_ip">This is your IP (tap to refresh)</string>
     
 </resources>
